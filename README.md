@@ -1,8 +1,14 @@
+# 우신 문서 · Wooshin Write
+
+우신 업무도구용 개인 포크입니다. WordCraft by the ArtCraft team을 기반으로 합니다. 원본의 공식 배포판이 아닙니다. [브랜딩 변경 안내](docs/WOOSHIN.ko.md).
+
+---
+
 <p align="center">
   <a href="https://getartcraft.com/">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
+      <source media="(prefers-color-scheme: dark)" srcset="assets/wooshin/wordmark-white.svg">
+      <img alt="ArtCraft" src="assets/wooshin/wordmark.svg" width="200">
     </picture>
   </a>
 </p>
@@ -363,6 +369,6 @@ Forks and modified versions must remove them.
 <sub>Microsoft and Microsoft Word are trademarks of the Microsoft group of companies. Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. WordCraft is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Microsoft Corporation or Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>
 
 <p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
+  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="assets/wooshin/mark.svg" width="28"></a><br>
   <sub>Made by the <a href="https://getartcraft.com/">ArtCraft</a> team and community.</sub>
 </p>

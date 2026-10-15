@@ -32,7 +32,7 @@ pub fn hook() -> Option<Hook> {
 
 /// The desktop entry the Linux packages install, and the Flatpak's app id.
 #[cfg(any(all(unix, not(target_os = "macos")), test))]
-const DESKTOP_ID: &str = "ai.storyteller.wordcraft.desktop";
+const DESKTOP_ID: &str = "com.wooshin.tools.write.desktop";
 
 /// The types the button makes WordCraft the default for on Linux and BSD: Word documents and
 /// templates (also macro-enabled and legacy), RTF and ODT. The same set the Windows installer
@@ -84,7 +84,7 @@ mod windows {
 
     /// Settings › Default apps, on the page of the app registered as `WordCraft` under
     /// `HKLM\Software\RegisteredApplications` (the MSI writes it).
-    const SETTINGS_URI: &str = "ms-settings:defaultapps?registeredAppMachine=WordCraft";
+    const SETTINGS_URI: &str = "ms-settings:defaultapps?registeredAppMachine=WooshinWrite";
 
     pub(super) fn open_default_apps() -> Result<DefaultApp, String> {
         open::that_detached(SETTINGS_URI).map_err(|e| format!("couldn't open Settings: {e}"))?;
@@ -106,7 +106,7 @@ mod xdg {
     pub(super) fn make_default() -> Result<DefaultApp, String> {
         if std::env::var_os("FLATPAK_ID").is_some() || std::path::Path::new("/.flatpak-info").exists() {
             return Err(
-                "the Flatpak sandbox can't change default apps; choose WordCraft under Open With in your file manager or system settings".into()
+                "the Flatpak sandbox can't change default apps; choose Wooshin Write under Open With in your file manager or system settings".into(),
             );
         }
         let var = |k: &str| std::env::var(k).ok();
@@ -139,7 +139,7 @@ mod tests {
     fn xdg_mime_sets_every_word_type_in_one_call() {
         let args = xdg_mime_args(DESKTOP_ID);
         assert_eq!(args.first().map(String::as_str), Some("default"));
-        assert_eq!(args.get(1).map(String::as_str), Some("ai.storyteller.wordcraft.desktop"));
+        assert_eq!(args.get(1).map(String::as_str), Some("com.wooshin.tools.write.desktop"));
         assert_eq!(&args[2..], WORD_MIME_TYPES);
         for t in [
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -161,7 +161,7 @@ mod tests {
         for t in WORD_MIME_TYPES {
             assert!(declared.contains(t), "{t} missing from MimeType=");
         }
-        assert!(entry.lines().any(|l| l == "Exec=wordcraft %F"), "files are passed on the command line");
+        assert!(entry.lines().any(|l| l == "Exec=wooshin-write %F"), "files are passed on the command line");
     }
 
     #[cfg(unix)]

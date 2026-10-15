@@ -1,14 +1,15 @@
 [Desktop Entry]
 Type=Application
-Name=WordCraft
+Name=Wooshin Write
+Name[ko]=우신 문서
 GenericName=Word Processor
 Comment=Write and design documents; open and save Word files
-Exec=wordcraft %F
-TryExec=wordcraft
-Icon=ai.storyteller.wordcraft
+Exec=wooshin-write %F
+TryExec=wooshin-write
+Icon=com.wooshin.tools.write
 Terminal=false
 StartupNotify=true
-StartupWMClass=ai.storyteller.wordcraft
+StartupWMClass=com.wooshin.tools.write
 Categories=Office;WordProcessor;
 Keywords=word;processor;document;docx;writer;text;letter;report;
 MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroEnabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroEnabled.12;application/msword;application/msword-template;application/vnd.oasis.opendocument.text;application/rtf;text/rtf;text/markdown;text/x-tex;text/html;text/plain;
